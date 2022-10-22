@@ -12,19 +12,19 @@ const galleryItems = [
     },
     {
         id: 3,
-        path: '/images/zinnia',
+        path: '/images/zinnia.jpg',
         description: 'Photo of a Zinnia flower from my garden.',
         likes: 0,
     },
     {
         id: 4,
-        path: '/images/sailboat',
+        path: '/images/sailboat.jpg',
         description: 'Photo of a sunset from a sailboat of the coast of San Diego.',
         likes: 7,
     },
     {
         id:5,
-        path: '/images/cosmos',
+        path: '/images/cosmos.jpg',
         description: 'Picture of a pink Cosmos flower from my garden.',
         likes: 0,
     }

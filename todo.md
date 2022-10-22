@@ -1,17 +1,17 @@
-[ ]add some images to the public/images
-[ ]modify the server/modules/data.js to include
+[ X]add some images to the public/images
+[ X]modify the server/modules/data.js to include
     [ ]id
     [ ]title
     [ ]description
     [ ]pathFor
 
-[ ]install nodemon
-[ ]npm install
-[ ]npm run client/server
+[ X]install nodemon
+[ X]npm install
+[ X]npm run client/server
 
-[ ]create components
-    [ ] gallery list
-    [ ] gallery item
+[ X]create components
+    [X ] gallery list
+    [ X] gallery item
 
 [ ]- Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.jsx`.
 

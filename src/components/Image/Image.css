@@ -1,0 +1,14 @@
+.image{  
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+}
+
+button{
+    
+}
+
+.picture{
+    height: 350px;
+    max-width: auto;
+}
