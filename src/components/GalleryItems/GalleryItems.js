@@ -20,11 +20,20 @@ function GalleryItem({imageList, getImages}){
 
     };
 
-    // const upVot=()=>{
-    //     axios({
-    //         method: 'PUT'
-    //     })
-    // }
+    const upVote=(evt)=>{
+        let id=evt.target.id;
+
+        axios({
+            method: 'PUT',
+            url: `gallery/like/${id}`
+        })
+            .then((response)=>{
+                getImages();
+            })
+            .catch(err=>{
+                console.error('in put error likes')
+            });
+    }
 
     
   
@@ -36,8 +45,8 @@ function GalleryItem({imageList, getImages}){
                     <div  className='picture'>
                         <img className="active" onClick={setState} id={image.id} alt={image.description} src={image.path}/>
                     </div>
-                    <button id={image.id} className="loveBtn">Love it!</button>
-                    <p>❤️ {image.votecount} people love this! ❤️</p>
+                    <button id={image.id} onClick={upVote} className="loveBtn">Love it!</button>
+                    <p>❤️ {image.likes} people love this! ❤️</p>
                 </div>
                 )}))};
 
