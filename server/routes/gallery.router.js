@@ -7,6 +7,7 @@ const galleryItems = require('../modules/gallery.data');
 // PUT Route
 router.put('/like/:id', (req, res) => {
     console.log(req.params);
+    console.log('in likes')
     const galleryId = req.params.id;
     for(const galleryItem of galleryItems) {
         if(galleryItem.id == galleryId) {
@@ -16,10 +17,18 @@ router.put('/like/:id', (req, res) => {
     res.sendStatus(200);
 }); // END PUT Route
 
+// //Set toggle value
 
+// router.put('/image/:id', (req, res) => {
+    
+//     console.log(galleryId);
+//     res.sendStatus(200);
+// })
 
 
 // GET Route
+
+
 router.get('/', (req, res) => {
     res.send(galleryItems);
 }); // END GET Route
