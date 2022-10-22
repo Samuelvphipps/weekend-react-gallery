@@ -4,8 +4,7 @@ function GalleryList({imageList, setImageList, getImages}){
     // console.log('imagelistingallerylist', imageList);
     return(
         <>
-            <h3>Gallery goes here</h3>
-
+            
             <section className='imageField'>
                 <GalleryItem 
                 setImageList={setImageList}

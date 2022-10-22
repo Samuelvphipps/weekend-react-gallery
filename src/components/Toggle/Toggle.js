@@ -17,7 +17,14 @@ return(
         </div>
     </>
 )};
+/*
+solution guidance found at:
+https://marysallent.medium.com/how-to-toggle-images-icons-using-react-hooks-for-beginners-by-a-beginner-e4b8459f1ce4
+*/
 
+/*
+storing active state locally which is modified on click and then the ternary operator decides what to rerender
+*/
 
 
 export default Toggle

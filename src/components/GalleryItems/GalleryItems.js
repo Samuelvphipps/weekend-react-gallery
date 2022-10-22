@@ -34,7 +34,7 @@ function GalleryItem({imageList, getImages}){
                 <div className='image' key={image.id}>
                     <Toggle image={image}/>
                     <button id={image.id} onClick={upVote} className="loveBtn">Love it!</button>
-                    <p>❤️ {image.likes} people love this! ❤️</p>
+                    <p className="imageLikes">❤️ {image.likes} people love this! ❤️</p>
                 </div>
                 )}))};
 

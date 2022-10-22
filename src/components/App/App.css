@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: rgb(215, 231, 245);
 }
 
 .App-header {
@@ -7,9 +9,15 @@
   padding: 1em;
   color: white;
   margin-bottom: 1em;
+  font-size: 30px;
+  padding:1em;
+  margin: .25em;
+  margin: auto
 }
 
+
 .App-title {
-  font-size: 1.5em;
+  
+  font-size: 2.5em;
 }
 
