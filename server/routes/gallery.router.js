@@ -16,15 +16,7 @@ router.put('/like/:id', (req, res) => {
     res.sendStatus(200);
 }); // END PUT Route
 
-router.put('/clicked/:id', (req, res)=>{
-    // console.log(req.params.id)
-    const galleryId=req.params.id;
-    // console.log(galleryItems);
-    for (let image in galleryItems){
-            console.log(image);
-    };
-    res.sendStatus(200);
-});
+
 
 
 // GET Route
