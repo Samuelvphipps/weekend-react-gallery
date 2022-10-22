@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import ImageField from '../ImageField/ImageField';
+import GalleryList from '../GalleryList/GalleryList';
 import axios from 'axios';
 import { useState, useEffect} from 'react';
 
@@ -10,6 +10,7 @@ function App() {
 
     useEffect(() => {
       getImages()
+
   }, []);
     
     const getImages=()=>{
@@ -18,6 +19,7 @@ function App() {
         url: '/gallery',
       })
         .then((response)=>{
+          // console.log(response.data);
           setImageList(response.data)
         })
         .catch(err=>{
@@ -28,7 +30,11 @@ function App() {
     return (
       <div className="App">
         <Header />
-        <ImageField imageList={imageList}/>
+        <GalleryList 
+        setImageList={setImageList}
+        imageList={imageList}
+        getImages={getImages}
+        />
       </div>
     );
 }

@@ -13,17 +13,17 @@
     [X ] gallery list
     [ X] gallery item
 
-[ ]- Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.jsx`.
+[ X]- Use `axios` to retrieve (`GET`) data from to `/gallery` and store it in `App.jsx`.
 
-[ ]- Create a new **component** for the `GalleryList` and pass it the gallery data stored in `App` via `props`.
+[ X]- Create a new **component** for the `GalleryList` and pass it the gallery data stored in `App` via `props`.
    
-[ ]- Iterate (loop over) the list of gallery data
+[ X]- Iterate (loop over) the list of gallery data
 
-[ ]- Make GalleryItems
+[ X]- Make GalleryItems
 
-[ ]- Create a new **component** called `GalleryItem.jsx` and pass it the individual gallery item via `props`. 
+[ X]- Create a new **component** called `GalleryItem.jsx` and pass it the individual gallery item via `props`. 
 
-[ ]- Update the `GalleryList` to use this component to display an image.
+[ X]- Update the `GalleryList` to use this component to display an image.
 
 [ ]- Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
 
