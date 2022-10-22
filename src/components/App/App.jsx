@@ -19,7 +19,7 @@ function App() {
         url: '/gallery',
       })
         .then((response)=>{
-          // console.log(response.data);
+          console.log(response.data);
           setImageList(response.data)
         })
         .catch(err=>{
