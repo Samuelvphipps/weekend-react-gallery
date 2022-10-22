@@ -1,13 +1,40 @@
 import React from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import ImageField from '../ImageField/ImageField';
+import GalleryList from '../GalleryList/GalleryList';
+import axios from 'axios';
+import { useState, useEffect} from 'react';
 
 function App() {
+    let [imageList, setImageList] = useState([]);
+
+    useEffect(() => {
+      getImages()
+
+  }, []);
+    
+    const getImages=()=>{
+      axios({
+        method: 'GET',
+        url: '/gallery',
+      })
+        .then((response)=>{
+          console.log(response.data);
+          setImageList(response.data)
+        })
+        .catch(err=>{
+          console.error('getting imagelist failed', err)
+        })
+    }
+
     return (
       <div className="App">
         <Header />
-        <ImageField />
+        <GalleryList 
+        setImageList={setImageList}
+        imageList={imageList}
+        getImages={getImages}
+        />
       </div>
     );
 }
