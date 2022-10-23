@@ -1,18 +1,19 @@
 .App {
   text-align: center;
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: rgb(215, 231, 245);
+ ;
+
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #2f3c7e;
   padding: 1em;
   color: white;
   margin-bottom: 1em;
-  font-size: 30px;
-  padding:1em;
-  margin: .25em;
-  margin: auto
+  font-size: 24px;
+  padding:.25em;
+  margin: 2em 6em;
+  border-radius: 5px;
 }
 
 

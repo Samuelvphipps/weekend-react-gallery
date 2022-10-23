@@ -15,6 +15,10 @@
     justify-content: center;
 }
 
+.toggleWrapper:hover{
+    cursor: pointer;
+}
+
 .inactive{
     vertical-align: middle;
     padding: 0;
