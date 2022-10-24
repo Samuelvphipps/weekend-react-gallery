@@ -3,10 +3,13 @@ import { useState } from 'react';
 import Toggle from '../Toggle/Toggle';
 import axios from 'axios';
 
-function GalleryItem({imageList, getImages}){
+function GalleryItem({imageList, getImages, image}){
     console.log('imageList:', imageList);
 
+    //local state to track if boolean is true or not for the conditional render
+    const [active, setActive] = useState(true);
 
+    //Put call to upvote and rerender
     const upVote=(evt)=>{
         let id=evt.target.id;
         //send event to server
@@ -16,6 +19,7 @@ function GalleryItem({imageList, getImages}){
         })
             .then((response)=>{
                 console.log(response);
+                //re render and call updated server state
                 getImages();
                 // console.log(response.data)
             })
@@ -23,30 +27,28 @@ function GalleryItem({imageList, getImages}){
                 console.error('in put error likes')
             });
     };
-    
-    return(
 
-       /*
-            <li className='image'>
-                <div> image  with toggle
-                <div> button and p  (condition render this as no people love this or number people love this)
-            </li>
-       */
-
-        imageList.map((image)=>{
             return (  /// 
                 <li className='image' key={image.id}>
-                    <Toggle image={image}/>
+                    {/* <Toggle image={image}/> */}
+                        {/* conditional render */}
+                        <div  onClick={()=>setActive(!active)} className="toggleWrapper picture" >
+                            {active ? 
+                            (<img className="active" id={image.id}  alt={image.description} src={image.path}/>) 
+                            :  
+                            (<h4 className="inactive">{image.description}</h4>)}
+                        </div>
                         {/* edan calls the function that lives all the way at app.js */}
                         {/* edan calls an inline with an id parameter onClick={()=>onLike(image.id)} */}
                         {/*                 must put a function to pass.  if you call it directly it goes nuts*/}
                         {/*                         if onClick={function()} ▶️ undefined/loop   */}
+                                            {/* //on click run upvote function */}
                     <button id={image.id} onClick={upVote}  className="loveBtn">Love it!</button>
-                    
+                                    {/* Conditional render for number of likes */}
                     {image.likes===0 ? <p className="imageLikes">Noone loves this 😦</p> :
                     <p className="imageLikes">❤️ {image.likes} people love this! ❤️</p>}
 
                 </li>
-                )}))};
+                )};
 
 export default GalleryItem

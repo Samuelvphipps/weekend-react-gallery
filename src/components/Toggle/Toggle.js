@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+//This file is no longer needed
 function Toggle({image}){
 const [active, setActive] = useState(true);
 
