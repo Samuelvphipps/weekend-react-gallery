@@ -6,13 +6,17 @@ import axios from 'axios';
 import { useState, useEffect} from 'react';
 
 function App() {
+
+    //local state to track array
     const [imageList, setImageList] = useState([]);    
 
+    //renders on page load
     useEffect(() => {
       getImages()
 
   }, []);
     
+    //Get state from server and set local state using setImageList
     const getImages=()=>{
       axios({
         method: 'GET',
@@ -30,11 +34,13 @@ function App() {
 
     //Edan put onlike event function here and passed it through as props to the items
 
+    //DOM rendering
     return (
       <div className="App">
+        {/* call header component */}
         <Header />
+        {/* call GalleryList component */}
         <GalleryList 
-        setImageList={setImageList}
         imageList={imageList}
         getImages={getImages}
         />

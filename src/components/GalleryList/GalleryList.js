@@ -14,10 +14,20 @@ function GalleryList({imageList, getImages}){
                             <GalleryItems key={image.id} galleryItem={galleryItem}/>                
                     ))}
                 */}
-                <GalleryItem 
+                {/* loop through imagelist and call galleryItem I moved this here 
+                since I had an extra layer into and then past galleryItem */}
+                {imageList.map((image)=>(
+                    <GalleryItem
+                    image={image}
+                    imageList={imageList}
+                    getImages={getImages}
+                    />
+                ))}
+
+                {/* <GalleryItem 
                 imageList={imageList}
                 getImages={getImages}
-                />
+                /> */}
             </ul>
         </>
     );
