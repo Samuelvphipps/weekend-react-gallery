@@ -27,6 +27,9 @@ function App() {
         })
     }
 
+
+    //Edan put onlike event function here and passed it through as props to the items
+
     return (
       <div className="App">
         <Header />

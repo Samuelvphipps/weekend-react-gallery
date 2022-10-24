@@ -37,7 +37,11 @@ function GalleryItem({imageList, getImages}){
             return (  /// 
                 <li className='image' key={image.id}>
                     <Toggle image={image}/>
-                    <button id={image.id} onClick={upVote} className="loveBtn">Love it!</button>
+                        {/* edan calls the function that lives all the way at app.js */}
+                        {/* edan calls an inline with an id parameter onClick={()=>onLike(image.id)} */}
+                        {/*                 must put a function to pass.  if you call it directly it goes nuts*/}
+                        {/*                         if onClick={function()} ▶️ undefined/loop   */}
+                    <button id={image.id} onClick={upVote}  className="loveBtn">Love it!</button>
                     
                     {image.likes===0 ? <p className="imageLikes">Noone loves this 😦</p> :
                     <p className="imageLikes">❤️ {image.likes} people love this! ❤️</p>}
