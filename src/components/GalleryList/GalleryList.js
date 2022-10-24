@@ -1,17 +1,24 @@
 import GalleryItem from "../GalleryItems/GalleryItems";
 
-function GalleryList({imageList, setImageList, getImages}){
+function GalleryList({imageList, getImages}){
     // console.log('imagelistingallerylist', imageList);
     return(
         <>
             
-            <section className='imageField'>
+            <ul className='imageField'>
+                {/* 
+                    should have imagelist.map and inside call <imageList>
+                */}
+                {/* 
+                    {imageList.map((galleryItem)=>(                       
+                            <GalleryItems key={image.id} galleryItem={galleryItem}/>                
+                    ))}
+                */}
                 <GalleryItem 
-                setImageList={setImageList}
                 imageList={imageList}
                 getImages={getImages}
                 />
-            </section>
+            </ul>
         </>
     );
 }

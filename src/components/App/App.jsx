@@ -6,11 +6,7 @@ import axios from 'axios';
 import { useState, useEffect} from 'react';
 
 function App() {
-    const [imageList, setImageList] = useState([]);
-
-    const [active, setActive] = useState(false);
-
-    
+    const [imageList, setImageList] = useState([]);    
 
     useEffect(() => {
       getImages()

@@ -6,11 +6,6 @@ import axios from 'axios';
 function GalleryItem({imageList, getImages}){
     console.log('imageList:', imageList);
 
-    const [active, setActive]=useState(false);
-
-    const changeActive=()=>{
-
-    }
 
     const upVote=(evt)=>{
         let id=evt.target.id;
@@ -20,22 +15,34 @@ function GalleryItem({imageList, getImages}){
             url: `gallery/like/${id}`
         })
             .then((response)=>{
+                console.log(response);
                 getImages();
+                // console.log(response.data)
             })
             .catch(err=>{
                 console.error('in put error likes')
             });
-    }
-
+    };
     
     return(
+
+       /*
+            <li className='image'>
+                <div> image  with toggle
+                <div> button and p  (condition render this as no people love this or number people love this)
+            </li>
+       */
+
         imageList.map((image)=>{
-            return (
-                <div className='image' key={image.id}>
+            return (  /// 
+                <li className='image' key={image.id}>
                     <Toggle image={image}/>
                     <button id={image.id} onClick={upVote} className="loveBtn">Love it!</button>
-                    <p className="imageLikes">❤️ {image.likes} people love this! ❤️</p>
-                </div>
+                    
+                    {image.likes===0 ? <p className="imageLikes">Noone loves this 😦</p> :
+                    <p className="imageLikes">❤️ {image.likes} people love this! ❤️</p>}
+
+                </li>
                 )}))};
 
 export default GalleryItem

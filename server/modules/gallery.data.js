@@ -10,7 +10,7 @@ const galleryItems = [
         id: 2,
         path: '/images/fish_stringer.jpg',
         description: 'Stringer of northern pike caught in the Boundary Waters.',
-        likes:3,
+        likes:0,
         clicked: false
     },
     {
