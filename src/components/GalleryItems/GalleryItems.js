@@ -1,6 +1,6 @@
 import './GalleryItems.css';
 import { useState } from 'react';
-import Toggle from '../Toggle/Toggle';
+// import Toggle from '../Toggle/Toggle';
 import axios from 'axios';
 
 function GalleryItem({imageList, getImages, image}){
@@ -30,8 +30,7 @@ function GalleryItem({imageList, getImages, image}){
 
             return (  /// 
                 <li className='image' key={image.id}>
-                    {/* <Toggle image={image}/> */}
-                        {/* conditional render */}
+                        {/* conditional render for image or description*/}
                         <div  onClick={()=>setActive(!active)} className="toggleWrapper picture" >
                             {active ? 
                             (<img className="active" id={image.id}  alt={image.description} src={image.path}/>) 
@@ -47,7 +46,6 @@ function GalleryItem({imageList, getImages, image}){
                                     {/* Conditional render for number of likes */}
                     {image.likes===0 ? <p className="imageLikes">Noone loves this 😦</p> :
                     <p className="imageLikes">❤️ {image.likes} people love this! ❤️</p>}
-
                 </li>
                 )};
 
