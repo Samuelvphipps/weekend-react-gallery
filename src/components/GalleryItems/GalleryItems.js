@@ -32,6 +32,7 @@ function GalleryItem({imageList, getImages, image}){
                 <li className='image' key={image.id}>
                         {/* conditional render for image or description*/}
                         <div  onClick={()=>setActive(!active)} className="toggleWrapper picture" >
+                            {/* added conditional here during live solve. */}
                             {active ? 
                             (<img className="active" id={image.id}  alt={image.description} src={image.path}/>) 
                             :  
@@ -43,7 +44,9 @@ function GalleryItem({imageList, getImages, image}){
                         {/*                         if onClick={function()} ▶️ undefined/loop   */}
                                             {/* //on click run upvote function */}
                     <button id={image.id} onClick={upVote}  className="loveBtn">Love it!</button>
-                                    {/* Conditional render for number of likes */}
+                                    {/* Conditional render for number of likes moved here from the original toggle 
+                                    to keep things more concise as I previously over-refactored
+                                    fixed after live solve*/}
                     {image.likes===0 ? <p className="imageLikes">Noone loves this 😦</p> :
                     <p className="imageLikes">❤️ {image.likes} people love this! ❤️</p>}
                 </li>

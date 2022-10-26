@@ -23,10 +23,13 @@ function App() {
         url: '/gallery',
       })
         .then((response)=>{
+
           console.log(response.data);
+          // make state equal to array from server
           setImageList(response.data)
         })
         .catch(err=>{
+            
           console.error('getting imagelist failed', err)
         })
     }
@@ -41,6 +44,7 @@ function App() {
         <Header />
         {/* call GalleryList component */}
         <GalleryList 
+        // pass image list and getimages function via props
         imageList={imageList}
         getImages={getImages}
         />

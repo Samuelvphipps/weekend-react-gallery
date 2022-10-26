@@ -18,6 +18,7 @@ function GalleryList({imageList, getImages}){
                 since I had an extra layer into and then past galleryItem */}
                 {imageList.map((image)=>(
                     <GalleryItem
+                    //pass image parameter, image list and get images via props to GalleryItem
                     image={image}
                     imageList={imageList}
                     getImages={getImages}
